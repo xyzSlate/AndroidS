@@ -31,7 +31,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.OutlinedTextField
@@ -44,6 +47,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.nicholas.sokomart.navigation.ROUT_INTENT
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -76,9 +80,18 @@ fun ItemScreen(navController: NavController){
                 IconButton(onClick = {}) {
                     Icon(imageVector = Icons.Filled.Notifications, contentDescription = "Notifications Icon")
                 }
+                IconButton(onClick = {
+                    navController.navigate(ROUT_INTENT)
+                }) {
+                    Icon(imageVector = Icons.Filled.ArrowForward, contentDescription = "Arrowforward Icon")
+                }
             }
         )
         //End of TopBar
+       // modifier = Modifier.
+        //Column( modifier = androidx.compose.ui.Modifier.fillMaxSize(),
+ Column (){ var modifier = Modifier.verticalScroll(rememberScrollState()) }
+
         Image(
             painter = painterResource(R.drawable.welcome),
             contentDescription = "home",
@@ -193,13 +206,101 @@ fun ItemScreen(navController: NavController){
             }
 
         }
+        Row (modifier = Modifier.padding(start = 20.dp)){
+            Image(
+                painter = painterResource(R.drawable.lofi),
+                contentDescription = "home",
+                modifier = Modifier.width(200.dp).height(150.dp).clip(RoundedCornerShape(50)),
+                contentScale = ContentScale.FillWidth
 
+            )
+            Column {
+                Text(
+                    text = "Men's T-shirt",
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 20.sp
+
+                )
+                Text(
+                    text = "Casual Wear",
+                    fontSize = 15.sp
+
+                )
+                Text(
+                    text = "Ksh.1900",
+                    fontSize = 15.sp,
+                    textDecoration = TextDecoration.LineThrough
+
+                )
+                Text(
+                    text = "Ksh.1500",
+                    fontSize = 15.sp
+                )
+                Row {
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+
+                }
+
+
+            }
+
+        }
+        Row (modifier = Modifier.padding(start = 20.dp)){
+            Image(
+                painter = painterResource(R.drawable.lofi),
+                contentDescription = "home",
+                modifier = Modifier.width(200.dp).height(150.dp).clip(RoundedCornerShape(50)),
+                contentScale = ContentScale.FillWidth
+
+            )
+            Column {
+                Text(
+                    text = "Men's T-shirt",
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 20.sp
+
+                )
+                Text(
+                    text = "Casual Wear",
+                    fontSize = 15.sp
+
+                )
+                Text(
+                    text = "Ksh.1900",
+                    fontSize = 15.sp,
+                    textDecoration = TextDecoration.LineThrough
+
+                )
+                Text(
+                    text = "Ksh.1500",
+                    fontSize = 15.sp
+                )
+                Row {
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = "")
+
+                }
+
+
+            }
+
+        }
+ }
 
 
     }
 
 
-}
+
 
 @Preview(showBackground = true)
 @Composable
