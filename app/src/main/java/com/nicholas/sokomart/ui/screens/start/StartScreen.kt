@@ -41,7 +41,7 @@ fun StartScreen(navController: NavController){
     ){
         Text(text = "Welcome")
         Image(
-            painter = painterResource(R.drawable.home),
+            painter = painterResource(R.drawable.welcome),
             contentDescription = "home"
         )
         Spacer(modifier = Modifier.height(20.dp))
